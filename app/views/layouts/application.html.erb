@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>RetailTrainings</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   
+  </body>
+</html>
+
+   <header class="headSec">
+      <h1>Retail Trainings</h1>
+      <ul>
+        <li> <%= link_to "Retail Store",  "/trainings "%></li>
+        <li> <%= link_to "Trainings",  "/subjects "%></li>
+                   <% if user_signed_in? %>
+                 <li><a href="#">Hi <%= current_user.email %></a></li>
+                 <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+          <% else %>
+                 <li><%= link_to 'Sign in', new_user_session_path %></li>
+          <% end %>
+      </ul>
+    </header>
+    <div class="container">
+    <%= yield %>
+</div>

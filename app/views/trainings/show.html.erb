@@ -1,0 +1,21 @@
+
+
+<p>
+  <strong>Store name:</strong>
+  <%= @training.Store_Name %>
+</p>
+
+<p>
+  <strong>Store adress:</strong>
+  <%= @training.Store_Adress %>
+</p>
+
+<p>
+  <strong>Training room:</strong>
+  <%= @training.Training_Room %>
+</p>
+<%= link_to 'Back', trainings_path %>
+ <% if user_signed_in? %> 
+<%= link_to 'Edit', edit_training_path(@training) %> |
+<% end %>
+ 

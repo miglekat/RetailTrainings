@@ -1,0 +1,39 @@
+
+ <div class="mainCont">
+<table>
+  <thead>
+    <tr><br>
+      <th>Training name</th>
+      <th>Description</th>
+      <th>Trainer name</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+   <tbody>
+    <% @subjects.each do |subject| %>
+      <tr>
+        <td><%= subject.Training_name %></td>
+        <td><%= subject.Description %></td>
+        <td><%= subject.Trainer_Name %></td>
+        <td><%= subject.Date %></td>
+        <td><%= link_to 'Show', subject %></td>
+       <% if user_signed_in? %>
+        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
+        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+  </table>
+</div>
+<br>
+<footer>
+   <% if user_signed_in? %>  
+<%= link_to 'New Training', new_subject_path, :class =>"button", :role=>"button" %>
+<% end %>
+ </footer>
+<br>
+
+
+

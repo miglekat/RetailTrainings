@@ -1,0 +1,25 @@
+
+
+<p>
+  <strong>Training name:</strong>
+  <%= @subject.Training_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @subject.Description %>
+</p>
+
+<p>
+  <strong>Trainer name:</strong>
+  <%= @subject.Trainer_Name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @subject.Date %>
+</p>
+<%= link_to 'Back', subjects_path %>
+ <% if user_signed_in? %> 
+<%= link_to 'Edit', edit_subject_path(@subject) %> |
+<% end %>
